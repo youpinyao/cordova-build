@@ -21,7 +21,7 @@ sudo i //管理员权限
 node // node 环境
 ios-deploy // 已经安装 npm install -g ios-deploy --unsafe-perm=true
 
-export ANDROID_HOME=/User/youpinyao/ADT
+export ANDROID_HOME=/Users/youpinyao/ADT
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 ```
