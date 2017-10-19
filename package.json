@@ -1,0 +1,26 @@
+{
+  "name": "cordova_build",
+  "version": "1.0.0",
+  "description": "## 安卓重新签名",
+  "main": "build.js",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "crypto": "^0.0.3",
+    "express": "^4.13.4",
+    "fstream": "^1.0.8",
+    "mt-downloader": "^1.4.1",
+    "moment": "^2.13.0",
+    "plist": "^1.2.0",
+    "tar": "^2.2.1",
+    "xml-parser": "^1.2.1",
+    "xml2js": "^0.4.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js",
+    "build": "node build"
+  },
+  "author": "",
+  "license": "ISC"
+}

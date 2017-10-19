@@ -54,7 +54,7 @@ function compress(projectPath, appName, buildPlatform, callback) {
 				}
 
 
-				var plugins = this.root.dirname + this.root.basename + '\\plugins'; 
+				var plugins = this.root.dirname + this.root.basename + '\\plugins';
 				var build = this.root.dirname + this.root.basename + '\\build';
 				var hook = this.root.dirname + this.root.basename + '\\hook';
 				var nodeModules = this.root.dirname + this.root.basename + '\\node_modules';
@@ -105,7 +105,7 @@ function compress(projectPath, appName, buildPlatform, callback) {
 					}
 					return true;
 				}
-	
+
 				return true;
 
 

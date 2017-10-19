@@ -11,16 +11,16 @@ if (os.platform() == 'win32') {
 
 		for (var i = 0; i < item.length; i++) {
 			var json = item[i];
-			if (json.family == 'IPv4' && json.address != '127.0.0.1' && /192\.168/g.test(json.address)) {
+			if (json.family == 'IPv4' && json.address != '127.0.0.1') {
 				CIP = json.address;
 			}
 		}
 	}
 } else {
-	var en = network.en0 || network.en1;
+  var en = network.en0 || network.en1;
 	for (var i = 0; i < en.length; i++) {
 		var json = en[i];
-		if (json.family == 'IPv4' && json.address != '127.0.0.1' && /192\.168/g.test(json.address)) {
+		if (json.family == 'IPv4' && json.address != '127.0.0.1') {
 			CIP = json.address;
 		}
 	}

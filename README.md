@@ -14,18 +14,24 @@ jarsigner -verbose -keystore release.keystore -signedjar yxjapp_distribution-rel
 在config.js 下修改，ip 地址，端口
 ```
 
+## 必须在管理员权限下启动
+
+```node
+sudo i
+```
+
 ## 启动服务
 
 ``` ndoe
-node server
+npm run server
 ```
 
 ## 构建
 
 ``` node
-node build <projectPath> <buildType> <platform>
+npm run build <projectPath> <buildType> <platform>
 
-node build ../ionicDemo debug ios
+npm run build ../ionicDemo debug ios
 
 platform 选填
 ```

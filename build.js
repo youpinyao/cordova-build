@@ -126,7 +126,9 @@ var server = app.listen(config.UPORT, function() {
 
 	if (!buildPlatform) {
 		buildPlatform = 'all'
-	}
+  }
+
+  console.log(projectPath, buildType, buildPlatform);
 
 	if (!projectPath) {
 		console.log('please set projectPath')
@@ -194,14 +196,12 @@ var server = app.listen(config.UPORT, function() {
 		zip.compress(projectPath, appName, buildPlatform, function() {
 			console.log('zip complete');
 			// process.exit();
-			
+
 			upload.progress(appName, buildType, buildPlatform, function() {
 				console.log('build ing');
 			});
 
 		})
 	})
-
-
 
 });

@@ -65,7 +65,6 @@ app.get('/upload/:path/:appName/:ip/:buildType/:buildPlatform', function (req, r
 
   errorIp = ip;
 
-
   console.log('upload ing ' + '[' + path + ']');
 
 
