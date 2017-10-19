@@ -1,2 +1,4 @@
 project/**
 zip/**
+dist/**
+node_modules
