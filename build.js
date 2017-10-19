@@ -183,7 +183,7 @@ var server = app.listen(config.UPORT, function() {
 
 	console.log('prepare ing');
 
-	exec('ionic prepare', {
+	exec('ionic cordova prepare', {
 		cwd: projectPath
 	}, function(err, out) {
 		err && console.log(err);

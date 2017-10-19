@@ -14,10 +14,12 @@ jarsigner -verbose -keystore release.keystore -signedjar yxjapp_distribution-rel
 在config.js 下修改，ip 地址，端口
 ```
 
-## 必须在管理员权限下启动
+## 环境要求
 
 ```node
-sudo i
+sudo i //管理员权限
+node // node 环境
+ios-deploy // 已经安装 npm install -g ios-deploy --unsafe-perm=true
 ```
 
 ## 启动服务
