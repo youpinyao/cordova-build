@@ -1,0 +1,1 @@
+node build ../ionicApp 192.168.1.88 ionicApp
