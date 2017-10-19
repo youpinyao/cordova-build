@@ -24,6 +24,10 @@ ios-deploy // 已经安装 npm install -g ios-deploy --unsafe-perm=true
 export ANDROID_HOME=/Users/youpinyao/ADT
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+android sudio
+\bin\idea.properties
+disable.android.first.run=true
 ```
 
 ## 启动服务
