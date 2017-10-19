@@ -81,7 +81,7 @@ function compress(projectPath, appName, buildPlatform, callback) {
         configXml = configXml.replace(/\\/g, '\\\\');
         packageJson = packageJson.replace(/\\/g, '\\\\');
 
-
+        process.stderr.clearLine(1);
         console.log(this.path);
 
         if ((new RegExp(git, 'g')).test(this.path)) {
