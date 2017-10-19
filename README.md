@@ -20,6 +20,10 @@ jarsigner -verbose -keystore release.keystore -signedjar yxjapp_distribution-rel
 sudo i //管理员权限
 node // node 环境
 ios-deploy // 已经安装 npm install -g ios-deploy --unsafe-perm=true
+
+export ANDROID_HOME=/User/youpinyao/ADT
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 ```
 
 ## 启动服务
