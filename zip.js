@@ -44,52 +44,53 @@ function compress(projectPath, appName, buildPlatform, callback) {
       filter: function () {
         var path = this.path;
 
-
-        if (/\.svn/g.test(path)) {
-          return false;
-        }
-
         if ((this.root.dirname + this.root.basename) == this.path) {
           return true;
         }
 
+        var base = this.root.dirname + '/' + this.root.basename;
 
-        var git = this.root.dirname + this.root.basename + '\\\.git';
-        var plugins = this.root.dirname + this.root.basename + '\\plugins';
-        var build = this.root.dirname + this.root.basename + '\\build';
-        var hook = this.root.dirname + this.root.basename + '\\hook';
-        var nodeModules = this.root.dirname + this.root.basename + '\\node_modules';
-        var packageHooks = this.root.dirname + this.root.basename + '\\package-hooks';
-        var platforms = this.root.dirname + this.root.basename + '\\platforms';
-        var android = this.root.dirname + this.root.basename + '\\platforms\\android';
-        var ios = this.root.dirname + this.root.basename + '\\platforms\\ios';
-        var www = this.root.dirname + this.root.basename + '\\www';
-        var configXml = this.root.dirname + this.root.basename + '\\config\.xml';
-        var packageJson = this.root.dirname + this.root.basename + '\\package\.json';
+        var tools = base + '/tools';
+        var svn = base + '/\.svn';
+        var git = base + '/\.git';
+        var dll = base + '/\.dll';
+        var src = base + '/src';
+        var plugins = base + '/plugins';
+        var build = base + '/build';
+        var hook = base + '/hook';
+        var nodeModules = base + '/node_modules';
+        var packageHooks = base + '/package-hooks';
+        var platforms = base + '/platforms';
+        var android = base + '/platforms/android';
+        var ios = base + '/platforms/ios';
+        var www = base + '/www';
+        var configXml = base + '/config\.xml';
+        var packageJson = base + '/package\.json';
 
-
-        git = git.replace(/\\/g, '\\\\');
-        plugins = plugins.replace(/\\/g, '\\\\');
-        build = build.replace(/\\/g, '\\\\');
-        hook = hook.replace(/\\/g, '\\\\');
-        nodeModules = nodeModules.replace(/\\/g, '\\\\');
-        packageHooks = packageHooks.replace(/\\/g, '\\\\');
-        // platforms = platforms.replace(/\\/g, '\\\\');
-        android = android.replace(/\\/g, '\\\\');
-        ios = ios.replace(/\\/g, '\\\\');
-        www = www.replace(/\\/g, '\\\\');
-        configXml = configXml.replace(/\\/g, '\\\\');
-        packageJson = packageJson.replace(/\\/g, '\\\\');
-
-        process.stderr.clearLine(1);
-        console.log(this.path);
-
+        if ((new RegExp(svn, 'g')).test(this.path)) {
+          return false;
+        }
         if ((new RegExp(git, 'g')).test(this.path)) {
           return false;
         }
-        if ((new RegExp(plugins, 'g')).test(this.path)) {
+        if ((new RegExp(dll, 'g')).test(this.path)) {
           return false;
         }
+        if ((new RegExp(tools, 'g')).test(this.path)) {
+          return false;
+        }
+        if ((new RegExp(src, 'g')).test(this.path)) {
+          return false;
+        }
+        // if ((new RegExp(plugins, 'g')).test(this.path)) {
+        //   return false;
+        // }
+
+        process.stderr.write(`${this.path.split(base)[1]}`);
+        process.stderr.clearLine();
+        process.stderr.cursorTo(0);
+
+        // console.log('dir: ' + this.root.dirname, 'base:' + this.root.basename, 'pp: ' + plugins);
 
         if (platforms == this.path) {
           return true;
